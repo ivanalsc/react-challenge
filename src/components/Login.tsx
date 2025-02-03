@@ -1,14 +1,11 @@
 import { SignIn } from "@clerk/clerk-react";
-import { Header } from "./Header";
-
 
 const Login = () => {
   return (
-    <div>
-        <Header/>
-        <SignIn />
+    <div className="flex justify-center pt-2">
+      <SignIn />
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

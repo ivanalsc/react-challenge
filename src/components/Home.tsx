@@ -1,12 +1,9 @@
-import React from 'react'
-import { Header } from './Header'
+import BandList from "./BandList";
 
 export const Home = () => {
   return (
     <div>
-      <Header />
-
-        Home
+      <BandList />
     </div>
-  )
-}
+  );
+};
