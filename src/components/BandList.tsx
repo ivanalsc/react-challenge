@@ -55,6 +55,7 @@ export default function BandList() {
 
   const [search, setSearch] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
+  const [orderBy, setOrderBy] = useState("name");
 
   if (bandsLoading || genresLoading)
     return <p className="text-center text-gray-500">Loading...</p>;
@@ -75,6 +76,14 @@ export default function BandList() {
         .filter((band) =>
           selectedGenre ? band.genreCode === selectedGenre : true
         )
+        .sort((a, b) => {
+          if (orderBy === "name") {
+            return a.name.localeCompare(b.name);
+          } else if (orderBy === "year") {
+            return a.year - b.year;
+          }
+          return 0;
+        })
     : [];
 
   return (
@@ -100,11 +109,19 @@ export default function BandList() {
             </option>
           ))}
         </select>
+        <select
+          className="p-2 border rounded"
+          value={orderBy}
+          onChange={(e) => setOrderBy(e.target.value)}
+        >
+          <option value="name">Sort by Name</option>
+          <option value="year">Sort by Year</option>
+        </select>
       </div>
       {filteredBands.length > 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4  max-w-9/10 m-auto">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-9/10 m-auto">
           {filteredBands.map((band) => (
-            <Card band={band} genres={genres} />
+            <Card key={band.id} band={band} genres={genres} />
           ))}
         </ul>
       ) : (
