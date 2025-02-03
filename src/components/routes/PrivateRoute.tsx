@@ -10,7 +10,7 @@ export const PrivateRoute = ({ children }: PrivateRouteType) => {
   const { isSignedIn, isLoaded } = useAuth();
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="text-center">Loading...</div>;
   }
 
   if (!isSignedIn) {

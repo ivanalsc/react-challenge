@@ -57,7 +57,7 @@ export default function BandList() {
   const [selectedGenre, setSelectedGenre] = useState("");
 
   if (bandsLoading || genresLoading)
-    return <p className="text-center text-gray-500">Cargando...</p>;
+    return <p className="text-center text-gray-500">Loading...</p>;
   if (bandsError)
     return (
       <p className="text-center text-red-500">Error: {bandsError.message}</p>
