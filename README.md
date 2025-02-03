@@ -1,4 +1,4 @@
-# Band Detail App
+# Bands App
 
 ## Description
 This project is a web application developed with React and React Query using Vite that allows users to view a list of music bands and details about it, including their albums and members. The data is retrieved from a public API.
@@ -9,6 +9,7 @@ This project is a web application developed with React and React Query using Vit
 - React Query
 - React Router
 - Tailwind CSS
+- Clerk  
 
 ## Installation
 To run the project locally, follow these steps:
@@ -28,8 +29,8 @@ To run the project locally, follow these steps:
    ```
 
 ## Features
+- Login authentication with Clerk.
 - List bands.  
 - View details of a band.
 - Retrieve albums associated with the band.
 - List band members.
-- 
